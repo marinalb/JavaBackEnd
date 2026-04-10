@@ -1,9 +1,71 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args){
-        module9();
+        module10_1();
+        module10_2();
+        module10_3();
     }
+
+    public static void module10_1() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Insert a size to vector");
+        int size = sc.nextInt();
+        int[] vet = new int[size];
+
+        for(int i=0; i< vet.length; i++){
+            System.out.print("Insert number: ");
+            vet[i] = sc.nextInt();
+        }
+        System.out.println("RESULT: " + Arrays.toString(vet));
+
+        for (int i = 0; i < vet.length; i++) {
+            for (int j = i + 1; j < vet.length; j++) {
+                if (vet[j] < vet[i]) {
+                    int aux = vet[i];
+                    vet[i] = vet[j];
+                    vet[j] = aux;
+                }
+            }
+        }
+        System.out.println("FINAL RESULT: " + Arrays.toString(vet));
+
+    }
+
+    public static void module10_2() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Insert a size to vector");
+        int size = sc.nextInt();
+        int[] vet = new int[size];
+
+        for(int i=0; i< vet.length; i++){
+            System.out.print("Insert number: ");
+            vet[i] = sc.nextInt();
+        }
+        System.out.println("RESULT: " + Arrays.toString(vet));
+
+        for (int i = 0; i < vet.length; i++) {
+            if(vet[i]%2 == 0) {
+                vet[i]=vet[i]*2;
+            }else vet[i] = (int) Math.pow(vet[i], 2);
+        }
+        System.out.println("FINAL RESULT: " + Arrays.toString(vet));
+
+    }
+
+    public static void module10_3() {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Insert a name: ");
+        String nome = sc.nextLine();
+
+        char[] letras = nome.toCharArray();
+
+        for (int i = letras.length - 1; i >= 0; i--) {
+            System.out.print(letras[i]);
+        }
+    }
+
 
     public static void module9() {
         Scanner sc = new Scanner(System.in);
